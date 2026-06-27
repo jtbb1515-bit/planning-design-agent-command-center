@@ -43,6 +43,39 @@ export function TaskBoard({ tasks, onStatusChange }: TaskBoardProps) {
                 <span>Priority: {task.priority}</span>
                 <span>{task.createdAt}</span>
               </div>
+              <div className="taskGpdcrf">
+                <div>
+                  <span>Current GPDCRF Phase</span>
+                  <strong>{task.currentGpdcrfPhase.toUpperCase()}</strong>
+                </div>
+                <div>
+                  <span>Human Review Gate</span>
+                  <strong>{task.humanReviewGate}</strong>
+                </div>
+                <div>
+                  <span>Data Readiness</span>
+                  <strong>{task.dataReadiness}</strong>
+                </div>
+                <div>
+                  <span>Draft Status</span>
+                  <strong>{task.draftStatus}</strong>
+                </div>
+                <div>
+                  <span>Review Status</span>
+                  <strong>{task.reviewStatus}</strong>
+                </div>
+                <div>
+                  <span>Version</span>
+                  <strong>{task.version}</strong>
+                </div>
+              </div>
+              <div className={`nextPhase ${task.canEnterNextPhase ? "canEnter" : "isLocked"}`}>
+                {task.canEnterNextPhase ? "可進入下一階段" : "不可進入下一階段"}｜{task.nextPhaseReason}
+              </div>
+              <div className="taskEvidence">
+                <span>Evidence / Source：{task.evidenceSources.join("、")}</span>
+                <span>Missing Info：{task.missingInfo.join("、") || "無"}</span>
+              </div>
               <label className="statusSelect">
                 <span>切換狀態</span>
                 <select value={task.status} onChange={(event) => onStatusChange(task.id, event.target.value as AgentStatus)}>

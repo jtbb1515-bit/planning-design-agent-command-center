@@ -18,7 +18,17 @@ export function generateMockTasks(projectContext: Project, userPrompt: string, a
       priority: index <= 1 ? "high" : "medium",
       brief: `依據「${projectContext.projectName}」與需求「${truncate(prompt, 48)}」進行第一輪分析。`,
       expectedOutput: agent.templates.join("、"),
-      createdAt
+      createdAt,
+      currentGpdcrfPhase: index === 0 ? "plan" : "goal",
+      humanReviewGate: index === 0 ? "blocked" : "pending",
+      evidenceSources: agent.knowledgeSources.slice(0, 2),
+      missingInfo: index === 0 ? ["現況圖面不足", "機電消防資料未確認"] : ["業主需求未確認"],
+      dataReadiness: index === 0 ? "blocked" : "insufficient",
+      draftStatus: "ai_draft",
+      reviewStatus: "pending",
+      version: "v0.1",
+      canEnterNextPhase: false,
+      nextPhaseReason: index === 0 ? "Plan 階段資料成熟度不足，Do blocked。" : "Goal 尚待人工確認。"
     }));
 }
 

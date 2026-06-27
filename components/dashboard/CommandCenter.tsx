@@ -8,6 +8,7 @@ import type { Task } from "@/types/task";
 import { AgentDirectory } from "@/components/agents/AgentDirectory";
 import { MainAgentCommand } from "@/components/dashboard/MainAgentCommand";
 import { OverviewBar } from "@/components/dashboard/OverviewBar";
+import { GPDCRFSystemPanel } from "@/components/gpdcrf/GPDCRFSystemPanel";
 import { ShellHeader } from "@/components/layout/ShellHeader";
 import { OutputTablePanel } from "@/components/outputs/OutputTablePanel";
 import { ProposalOutlineExporter } from "@/components/proposal/ProposalOutlineExporter";
@@ -109,6 +110,7 @@ export function CommandCenter() {
         />
       </div>
 
+      <GPDCRFSystemPanel />
       <TaskBoard tasks={tasks} onStatusChange={updateTaskStatus} />
       <div className="operationsGrid">
         <MissingInfoPanel items={missingInfo} onToggleStatus={toggleMissingInfo} />

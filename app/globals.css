@@ -508,11 +508,270 @@ button {
   color: var(--muted);
 }
 
+.gpdcrfPanel,
 .taskBoardPanel,
 .missingInfoPanel,
 .proposalPanel,
 .outputPanel {
   margin-top: 18px;
+}
+
+.gpdcrfWorkflow {
+  display: grid;
+  grid-template-columns: repeat(6, minmax(0, 1fr));
+  gap: 1px;
+  background: var(--line);
+  border-top: 1px solid var(--line);
+}
+
+.gpdcrfPhaseCard {
+  border: 0;
+  background: #ffffff;
+  color: var(--ink);
+  min-height: 120px;
+  padding: 14px;
+  text-align: left;
+  display: grid;
+  gap: 8px;
+  align-content: start;
+}
+
+.gpdcrfPhaseCard.isActive {
+  background: var(--surface-soft);
+  box-shadow: inset 0 -3px 0 var(--line-strong);
+}
+
+.gpdcrfPhaseCard strong,
+.gpdcrfPhaseCard span,
+.gpdcrfPhaseCard small {
+  display: block;
+}
+
+.gpdcrfPhaseCard strong {
+  font-size: 15px;
+}
+
+.gpdcrfPhaseCard span {
+  width: fit-content;
+  border: 1px solid var(--line);
+  padding: 4px 7px;
+  color: var(--muted);
+  font-size: 11px;
+  font-weight: 800;
+}
+
+.gpdcrfPhaseCard small {
+  color: var(--muted);
+  line-height: 1.45;
+}
+
+.state-blocked span,
+.state-rejected span,
+.state-locked span {
+  color: var(--danger);
+}
+
+.state-revise span {
+  color: var(--warning);
+}
+
+.gpdcrfContent {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 300px;
+  gap: 1px;
+  background: var(--line);
+}
+
+.gpdcrfMain,
+.humanGate {
+  background: #ffffff;
+  padding: 18px;
+}
+
+.gpdcrfStateBanner,
+.gpdcrfStepBrief,
+.gpdcrfNotice {
+  border: 1px solid var(--line);
+  background: var(--surface-soft);
+  padding: 14px;
+  margin-bottom: 14px;
+}
+
+.gpdcrfStateBanner strong,
+.gpdcrfStateBanner span,
+.gpdcrfStateBanner small,
+.gpdcrfStepBrief strong {
+  display: block;
+}
+
+.gpdcrfStateBanner span,
+.gpdcrfStateBanner small,
+.gpdcrfStepBrief p,
+.gpdcrfNotice p {
+  color: var(--muted);
+  line-height: 1.55;
+  margin: 8px 0 0;
+  font-size: 13px;
+}
+
+.gpdcrfStepBrief dl,
+.recordCard dl {
+  display: grid;
+  gap: 8px;
+  margin: 12px 0 0;
+}
+
+.gpdcrfStepBrief div,
+.recordCard dl div {
+  display: grid;
+  grid-template-columns: 150px 1fr;
+  gap: 10px;
+}
+
+.gpdcrfStepBrief dt,
+.gpdcrfStepBrief dd,
+.recordCard dt,
+.recordCard dd {
+  margin: 0;
+  font-size: 12px;
+  line-height: 1.45;
+}
+
+.gpdcrfStepBrief dt,
+.recordCard dt {
+  color: var(--accent);
+  font-weight: 800;
+}
+
+.gpdcrfStepBrief dd,
+.recordCard dd {
+  color: var(--muted);
+}
+
+.gpdcrfDetailGrid,
+.readinessGrid,
+.checkGrid,
+.feedbackGrid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 12px;
+}
+
+.gpdcrfField {
+  display: grid;
+  gap: 8px;
+}
+
+.gpdcrfField span {
+  color: var(--muted);
+  font-size: 12px;
+  font-weight: 800;
+}
+
+.gpdcrfField textarea,
+.readinessCard select,
+.humanGate select {
+  width: 100%;
+  border: 1px solid var(--line);
+  background: var(--surface-soft);
+  color: var(--ink);
+  padding: 10px;
+}
+
+.readinessCard,
+.checkColumn,
+.feedbackCard,
+.recordCard {
+  border: 1px solid var(--line);
+  background: var(--surface-soft);
+  padding: 14px;
+}
+
+.readinessCard strong,
+.readinessCard span,
+.feedbackCard strong,
+.feedbackCard span,
+.recordCard strong,
+.recordCard span {
+  display: block;
+}
+
+.readinessCard span,
+.feedbackCard span,
+.feedbackCard small,
+.recordCard span {
+  color: var(--muted);
+  font-size: 12px;
+  margin-top: 4px;
+}
+
+.readinessCard p,
+.feedbackCard p,
+.recordCard p,
+.humanGate p {
+  color: var(--muted);
+  font-size: 13px;
+  line-height: 1.55;
+}
+
+.doProduction {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 12px;
+}
+
+.draftStage {
+  min-height: 110px;
+  border: 1px solid var(--line);
+  background: var(--surface-soft);
+  color: var(--ink);
+  padding: 14px;
+  text-align: left;
+}
+
+.draftStage.isActive {
+  border-color: var(--line-strong);
+  background: #ffffff;
+}
+
+.draftStage strong,
+.draftStage span {
+  display: block;
+}
+
+.draftStage span {
+  color: var(--muted);
+  font-size: 12px;
+  margin-top: 8px;
+}
+
+.checkItem {
+  border-top: 1px solid var(--line);
+  padding: 10px 0;
+}
+
+.checkItem strong,
+.checkItem span {
+  display: block;
+}
+
+.checkItem span {
+  color: var(--muted);
+  font-size: 12px;
+  margin-top: 4px;
+}
+
+.recordList {
+  display: grid;
+  gap: 12px;
+}
+
+.humanGate h3 {
+  margin: 0 0 12px;
+}
+
+.humanGate small {
+  color: var(--muted);
 }
 
 .taskBoard,
@@ -548,6 +807,52 @@ button {
   color: var(--muted);
   font-size: 12px;
   line-height: 1.5;
+}
+
+.taskGpdcrf {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 8px;
+  margin-top: 12px;
+}
+
+.taskGpdcrf div,
+.nextPhase,
+.taskEvidence {
+  border: 1px solid var(--line);
+  background: #ffffff;
+  padding: 9px;
+}
+
+.taskGpdcrf span,
+.taskEvidence span {
+  display: block;
+  color: var(--muted);
+  font-size: 11px;
+  line-height: 1.45;
+}
+
+.taskGpdcrf strong {
+  display: block;
+  margin-top: 4px;
+  font-size: 12px;
+}
+
+.nextPhase {
+  margin-top: 10px;
+  color: var(--danger);
+  font-size: 12px;
+  line-height: 1.45;
+}
+
+.nextPhase.canEnter {
+  color: var(--success);
+}
+
+.taskEvidence {
+  display: grid;
+  gap: 5px;
+  margin-top: 10px;
 }
 
 .missingTopline button {
@@ -685,6 +990,19 @@ td {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
+  .gpdcrfWorkflow,
+  .doProduction {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  .gpdcrfContent,
+  .gpdcrfDetailGrid,
+  .readinessGrid,
+  .checkGrid,
+  .feedbackGrid {
+    grid-template-columns: 1fr;
+  }
+
   .outputLayout {
     grid-template-columns: 1fr;
   }
@@ -715,7 +1033,10 @@ td {
   .workspaceGrid,
   .operationsGrid,
   .taskBoard,
-  .missingGrid {
+  .missingGrid,
+  .gpdcrfWorkflow,
+  .doProduction,
+  .taskGpdcrf {
     grid-template-columns: 1fr;
   }
 
