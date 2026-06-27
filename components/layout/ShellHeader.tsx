@@ -6,8 +6,8 @@ export function ShellHeader() {
         <h1>規劃設計部 AI Agent Command Center</h1>
       </div>
       <div className="headerMeta" aria-label="system status">
-        <span>Mock Mode</span>
-        <strong>Master Agent Online</strong>
+        <span>Phase 1 Prototype</span>
+        <strong>Internal Design OS</strong>
       </div>
     </header>
   );

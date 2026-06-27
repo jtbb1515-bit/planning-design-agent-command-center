@@ -1,72 +1,28 @@
-export type DesignStage = "概念設計" | "基本設計" | "細部設計" | "施工圖" | "監造服務";
+export type AgentStatus = "idle" | "assigned" | "working" | "review" | "completed" | "blocked";
 
-export type ProjectInfo = {
-  projectName: string;
-  siteLocation: string;
-  projectType: string;
-  designStage: DesignStage;
-};
+export type AgentDiscipline = "urban" | "architecture" | "interior" | "landscape" | "quality";
 
-export type AgentStatus = "idle" | "queued" | "running" | "review" | "complete";
-
-export type SubAgent = {
-  id: string;
-  name: string;
-  role: string;
-  status: AgentStatus;
-  task: string;
-  knowledgeBase: string;
-  template: string;
-  outputType: "表格" | "文字" | "圖面清單" | "簡報段落";
-};
-
-export type SpecialistAgent = {
+export type Agent = {
   id: string;
   sectionCode: string;
-  departmentName: string;
-  name: string;
-  discipline: string;
+  displayName: string;
+  formalName: string;
+  discipline: AgentDiscipline;
+  description: string;
   status: AgentStatus;
-  currentTask: string;
   progress: number;
   lastUpdated: string;
-  subAgents: SubAgent[];
+  knowledgeSources: string[];
+  templates: string[];
+  childAgents: ChildAgent[];
 };
 
-export type ChatMessage = {
+export type ChildAgent = {
   id: string;
-  role: "user" | "master";
-  author: string;
-  content: string;
-  timestamp: string;
-};
-
-export type Deliverable = {
-  id: string;
-  agentId: string;
-  agentName: string;
-  title: string;
-  summary: string;
-  format: "分析報告" | "設計策略" | "圖面清單" | "簡報摘要";
-  status: "draft" | "ready" | "review";
-};
-
-export type WorkflowStep = {
-  id: string;
-  title: string;
-  description: string;
-  status: "done" | "active" | "pending";
-};
-
-export type QualityCheck = {
-  id: string;
-  title: string;
-  result: "pass" | "warning" | "pending";
-  note: string;
-};
-
-export type DispatchPayload = {
-  project: ProjectInfo;
-  requirement: string;
-  targetAgents: string[];
+  name: string;
+  responsibility: string;
+  status: AgentStatus;
+  knowledgeSource: string;
+  template: string;
+  expectedOutput: string;
 };
