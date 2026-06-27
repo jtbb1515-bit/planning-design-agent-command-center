@@ -2,8 +2,8 @@ import type { Metadata } from "next";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "規劃設計部 AI Agent Command Center",
-  description: "AI Agent management prototype for architecture office planning and design teams."
+  title: "傑設國際設計+詹世州建築師事務所 設計儀表板",
+  description: "傑設國際設計與詹世州建築師事務所的 AI 設計任務管理儀表板。"
 };
 
 export default function RootLayout({
